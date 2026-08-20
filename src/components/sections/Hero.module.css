@@ -216,11 +216,103 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  overflow: hidden;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
 }
 
 .portraitImage {
   object-fit: contain;
   object-position: bottom center;
+}
+
+/* Soft bottom edge transition */
+.bottomGroundFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: linear-gradient(to top, var(--bg) 0%, rgba(247, 241, 232, 0) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+[data-theme="dark"] .bottomGroundFade {
+  background: linear-gradient(to top, var(--bg) 0%, rgba(13, 13, 13, 0) 100%);
+}
+
+/* Grounding Base Pedestal Badge */
+.groundBaseDock {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.groundBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  pointer-events: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.groundBadge:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-orange);
+  box-shadow: 0 14px 32px rgba(237, 162, 63, 0.2);
+}
+
+[data-theme="dark"] .groundBadge {
+  background: #181818;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+}
+
+.groundPulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseDotAnim 2s infinite;
+}
+
+@keyframes pulseDotAnim {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+.groundText {
+  font-family: var(--font-body), "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* Underneath Radial Ground Shadow */
+.groundShadow {
+  position: absolute;
+  bottom: -16px;
+  left: 12%;
+  right: 12%;
+  height: 28px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 72%);
+  filter: blur(8px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .contactStamp {

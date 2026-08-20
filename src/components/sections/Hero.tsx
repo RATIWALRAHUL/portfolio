@@ -134,7 +134,21 @@ export default function Hero() {
               sizes="(max-width: 860px) 360px, 500px"
               className={styles.portraitImage}
             />
+
+            {/* Soft bottom grounding fade */}
+            <div className={styles.bottomGroundFade} aria-hidden="true" />
           </div>
+
+          {/* Grounding Base Pedestal Badge */}
+          <div className={styles.groundBaseDock}>
+            <div className={styles.groundBadge}>
+              <span className={styles.groundPulseDot} aria-hidden="true" />
+              <span className={styles.groundText}>UI/UX Designer • Available for Projects</span>
+            </div>
+          </div>
+
+          {/* Underneath Radial Ground Shadow */}
+          <div className={styles.groundShadow} aria-hidden="true" />
 
           {/* Rotating Circular Contact Badge with Down Arrow */}
           <Link
@@ -150,7 +164,6 @@ export default function Hero() {
               <path
                 id="contactCirclePath"
                 d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
-                fill="none"
               />
               <text className={styles.stampText}>
                 <textPath href="#contactCirclePath" startOffset="0%">
