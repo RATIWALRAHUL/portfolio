@@ -1,76 +1,129 @@
-# Geeta — UI/UX Designer Portfolio
+# ✨ Geeta Bisht — UI/UX Designer & Product Architect Portfolio
 
-A modern, high-craft portfolio website for **Geeta**, a UI/UX Designer based in India. Built with Next.js (App Router), TypeScript, CSS Modules, and Framer Motion.
+A modern, high-craft, award-winning portfolio website for **Geeta Bisht**, a Senior UI/UX Designer specializing in live enterprise systems, fintech platforms, multi-dashboard admin suites, and consumer mobile applications.
 
-## 🚀 Features
-
-- **Hero & Micro-animations**: Staggered letter-by-letter headline entrance and dynamic floating portrait backdrop.
-- **Specialties Grid**: Asymmetrical 3-column bento layout with rotating accent tokens (`orange`, `teal`, `lavender`, `coral`) and a 2-column bio card.
-- **Milestone Stats**: Real-time exponential count-up numbers triggered on scroll into view with interactive dashboard mockup.
-- **Recent Work**: Asymmetric bento grid pulling data statically from `src/lib/data.ts`.
-- **Project Case Studies**: Dedicated `/projects/[slug]` route with a `52vh` full-bleed banner, sticky overview sidebar, long-form typography, and next project navigator.
-- **About Page**: Hero intro, design philosophy, animated stat grid, 3-stage agile workflow card, and interactive tool stack strip.
-- **Contact Page**: Split-screen with underline-style validated form, client-side submission state, and oversized bleeding outlined wordmark.
-- **Mobile Navigation**: Full-screen slide-in overlay menu with body scroll locking and keyboard navigation.
-- **Theme Support**: Smooth spring sliding toggle between Light and Dark mode with persistence via `next-themes`.
-- **Zero Backend Required**: Fully static HTML export ready for instant deployment to any CDN or static host.
+[![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.0+-purple?style=flat-square&logo=framer)](https://www.framer.com/motion/)
+[![Typography](https://img.shields.io/badge/Typography-Plus_Jakarta_Sans-orange?style=flat-square)](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 ---
 
-## 🛠️ Getting Started
+## 🌐 Live Production Web Properties
 
-First, install dependencies and run the local development server:
+This portfolio highlights real, production-deployed web systems and mobile applications designed and shipped by Geeta Bisht:
+
+| Project | Vertical | Live URL | Key Highlights |
+| :--- | :--- | :--- | :--- |
+| **Gatecode OMS** | Enterprise SaaS | [gatecode.net](http://gatecode.net/) | 4-in-1 multi-dashboard suite (Admin, Employee, Company, Branch) with live role-based telemetry. |
+| **SDPT Tech** | IT & Cloud Engineering | [sdpttech.com](https://sdpttech.com/) | Corporate portal with custom workstation configurator & enterprise cloud services. |
+| **Gatexpay** | Fintech Gateway | [gatexpay.in](https://www.gatexpay.in/) | Live high-trust payment gateway with QR checkout flows & merchant settlement portals. |
+| **Damru By Namo** | Dining & Hospitality | [damrubynamo.com](https://damrubynamo.com/) | Live luxury culinary platform with interactive reservation flows & Figma prototype. |
+| **Gatecode Technologies** | Agency Portal | [gatecode.in](https://gatecode.in/) | Official corporate agency platform showcasing case studies & product engineering. |
+
+---
+
+## 🔑 Gatecode OMS — Live Test Credentials
+
+The **Gatecode OMS** platform is deployed live at **[http://gatecode.net/](http://gatecode.net/)**. You can test the live role-based permissions using the following credentials:
+
+- **Universal Password**: `password`
+
+| Role | Email | Scope |
+| :--- | :--- | :--- |
+| **Super Administrator** | `admin@gmail.com` | Full multi-branch access & executive analytics |
+| **UI/UX Designer (Geeta)** | `geeta@gmail.com` | Design system & project asset portal |
+| **Operations Lead** | `harsh@gmail.com` | Attendance approvals & branch telemetry |
+| **Full Stack Engineer** | `animeshj720@gmail.com` | Developer API & integration endpoints |
+| **Senior Engineer** | `uttam@gmail.com` | Sprint management & task tracker |
+| **QA Lead** | `balram@gmail.com` | Release pipelines & test verification |
+| **Product Associate** | `rishi@gmail.com` | Client deliverables & milestone reports |
+| **Product Analyst** | `vibhu@gmail.com` | Operational metrics & time tracking |
+| **Business Lead** | `rahul@gmail.com` | Corporate billing & financial logs |
+| **Frontend Lead** | `parth@gmail.com` | UI component architecture |
+
+---
+
+## 📱 Featured Figma Design Systems
+
+1. **Rubaru Dating & Social App**:
+   - 25+ high-resolution mobile UI screens (Search Partners, Social Reels, Direct Messaging, Interactive Polls, Scam Protection Center, Community Safety, and VoIP Calling).
+2. **Damru By Namo**:
+   - Interactive live Figma prototype embedded directly inside the case study.
+3. **Ecobin Environmental**:
+   - High-density industrial waste management & automated quote estimation flows.
+4. **Kortya Pay**:
+   - Consumer-first mobile wallet design with instant QR scan-and-pay and biometric auth.
+
+---
+
+## 🚀 Key Features
+
+- **Interactive Click-to-Preview Lightbox Gallery**: Fullscreen modal with smooth slide transitions, keyboard controls (`ArrowRight`, `ArrowLeft`, `Escape`), and image counters.
+- **Bento Grid & Filter System**: Categorized filtering (`All`, `🟢 Live Products`, `Mobile App`, `Admin Panel`, `Fintech`, `Web & Branding`).
+- **Live Credentials Terminal**: 1-click clipboard copying for all 10 test accounts and passwords.
+- **Real Browser Mockup Frames**: Responsive desktop frames with status indicators for all live sites.
+- **Modern Typography Hierarchy**: Paired with `Plus Jakarta Sans` for bold display headings and `DM Sans` for body legibility.
+- **Dual Theme Support**: Smooth spring toggle between warm Editorial Light mode and sleek Deep Charcoal Dark mode.
+- **100% Static HTML Export**: Fully pre-rendered static routes (`output: "export"`) with zero runtime server latency.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Vanilla CSS Modules with design tokens (`src/styles/theme.css`)
+- **Animation**: Framer Motion
+- **Icons**: Lucide React
+- **Fonts**: Next.js Font Optimization (`Plus Jakarta Sans` & `DM Sans`)
+- **Screenshots Automation**: Puppeteer Headless Chromium
+
+---
+
+## 💻 Getting Started Locally
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/RATIWALRAHUL/portfolio.git
+cd portfolio
+
+# 2. Install dependencies
 npm install
+
+# 3. Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to view the portfolio.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 📦 Static Build & Export
-
-To build the static site for production:
+## 📦 Static Production Build
 
 ```bash
 npm run build
-# or
-npm run export
 ```
 
-Next.js will statically generate all HTML, CSS, JavaScript, and SVG assets into the **`out/`** directory.
+Generates all 23 pre-rendered static HTML routes in the `out/` directory.
 
 ---
 
-## 🌐 Deployment
+## 🚀 Deployment
 
-Because `next.config.ts` is configured with `output: "export"` and `images: { unoptimized: true }`, you can deploy the generated **`out/`** directory to any static hosting service with zero runtime server dependencies.
+### Vercel (Recommended)
+1. Push to your GitHub repository.
+2. Import project into [Vercel](https://vercel.com).
+3. Vercel will automatically build and deploy with zero configuration.
 
-### 1. Vercel (Recommended)
-- Connect your GitHub / GitLab repository to Vercel.
-- Vercel automatically detects Next.js and builds the project with zero configuration required.
-
-### 2. Netlify
-- Connect your Git repository in Netlify.
-- Set **Build command**: `npm run build`
-- Set **Publish directory**: `out`
-
-### 3. GitHub Pages
-- Build the project using `npm run build`.
-- Deploy the `out/` folder using the `gh-pages` branch or a GitHub Actions workflow.
-- **Note on Subpaths**: If your repository is hosted at a subpath (e.g. `username.github.io/repo-name`), configure `basePath` in `next.config.ts`:
-  ```ts
-  const nextConfig: NextConfig = {
-    output: "export",
-    basePath: "/repo-name",
-    images: { unoptimized: true },
-  };
-  ```
+### Netlify
+1. Connect Git repository to Netlify.
+2. Set **Build command**: `npm run build`
+3. Set **Publish directory**: `out`
 
 ---
 
 ## 📄 License
 
-MIT © [Geeta](https://geeta.com)
+MIT License © [Geeta Bisht](https://github.com/RATIWALRAHUL/portfolio)
