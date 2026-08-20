@@ -1,0 +1,433 @@
+.section {
+  padding: 96px 0;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+}
+
+/* Category Filter Tabs */
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 36px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.filterBar::-webkit-scrollbar {
+  display: none;
+}
+
+.filterBtn {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.filterBtn:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.filterBtnActive {
+  background: var(--accent-orange);
+  color: #151515;
+  border-color: var(--accent-orange);
+  box-shadow: 0 4px 14px rgba(237, 162, 63, 0.3);
+}
+
+/* Bento Grid Layout */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 290px;
+  gap: 24px;
+}
+
+/* Uniform Grid for All Projects Page */
+.uniformGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.uniformItem {
+  height: 320px;
+}
+
+/* Bento Span Classes */
+.bentoItem0 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.bentoItem1 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.bentoItem2 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.bentoItem3 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.bentoItem4 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+/* Card CTA Box */
+.ctaCard {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-orange);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .ctaCard:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+.ctaTop {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ctaEyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-orange-text);
+}
+
+.ctaHeading {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.ctaBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.ctaLinkText {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-orange-text);
+}
+
+/* Main Card */
+.card {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Image */
+.imageWrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #111111;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+/* Gradient Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.5) 45%,
+    rgba(0, 0, 0, 0.05) 80%,
+    transparent 100%
+  );
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: background 0.35s ease;
+}
+
+.card:hover .overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.65) 50%,
+    rgba(0, 0, 0, 0.15) 85%,
+    transparent 100%
+  );
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  transform: translateY(2px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cardInfo {
+  transform: translateY(0);
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tagRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.categoryTag {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+  background: rgba(237, 162, 63, 0.18);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.liveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.25);
+  backdrop-filter: blur(8px);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+}
+
+.greenDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.projectTitle {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 1.6vw, 22px);
+  color: #ffffff;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.actionsRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.liveDirectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  z-index: 5;
+}
+
+.liveDirectLink:hover {
+  background: #10b981;
+  color: #151515;
+  transform: scale(1.05);
+}
+
+.arrowBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.35s ease,
+              color 0.35s ease;
+}
+
+.card:hover .arrowBtn,
+.ctaCard:hover .arrowBtn {
+  background: var(--accent-orange);
+  color: #151515;
+  transform: scale(1.08) rotate(45deg);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .bentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 260px;
+  }
+
+  .bentoItem0 {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .bentoItem1 {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .bentoItem2,
+  .bentoItem3 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .bentoItem4 {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .ctaCard {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 240px;
+  }
+
+  .bentoItem0,
+  .bentoItem1,
+  .bentoItem2,
+  .bentoItem3,
+  .bentoItem4,
+  .ctaCard {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .overlay {
+    padding: 16px;
+  }
+}

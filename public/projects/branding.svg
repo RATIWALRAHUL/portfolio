@@ -1,0 +1,16 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#431407"/>
+  <circle cx="700" cy="80" r="180" fill="#F97316" fill-opacity="0.3"/>
+  <g transform="translate(100, 50)">
+    <rect width="600" height="350" rx="20" fill="#1C1917" stroke="#78350F" stroke-width="2"/>
+    <rect x="40" y="30" width="140" height="12" rx="6" fill="#F97316"/>
+    <rect x="40" y="55" width="300" height="20" rx="6" fill="#FFFFFF"/>
+    <!-- Logo vector grids and palettes -->
+    <rect x="40" y="95" width="160" height="180" rx="12" fill="#292524"/>
+    <circle cx="120" cy="170" r="40" fill="#F97316"/>
+    <rect x="220" y="95" width="160" height="180" rx="12" fill="#292524"/>
+    <rect x="250" y="130" width="100" height="80" rx="16" fill="#EDA23F"/>
+    <rect x="400" y="95" width="160" height="180" rx="12" fill="#292524"/>
+    <polygon points="480,120 520,200 440,200" fill="#F43F5E"/>
+  </g>
+</svg>

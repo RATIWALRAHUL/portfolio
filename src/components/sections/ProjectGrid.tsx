@@ -1,0 +1,244 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { projects } from "@/lib/data";
+import Button from "@/components/ui/Button";
+import styles from "./ProjectGrid.module.css";
+
+interface ProjectGridProps {
+  showAll?: boolean;
+}
+
+const filterCategories = [
+  "All",
+  "Live Products",
+  "Mobile App",
+  "Admin Panel",
+  "Fintech",
+  "Web & Branding",
+];
+
+export default function ProjectGrid({ showAll = false }: ProjectGridProps) {
+  const [activeFilter, setActiveFilter] = useState("All");
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.06,
+      },
+    },
+  };
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0.1 : 0.45,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const bentoSpanStyles = [
+    styles.bentoItem0,
+    styles.bentoItem1,
+    styles.bentoItem2,
+    styles.bentoItem3,
+    styles.bentoItem4,
+    styles.bentoItem0,
+    styles.bentoItem1,
+    styles.bentoItem2,
+  ];
+
+  // Filtering Logic
+  const filteredProjects = projects.filter((project) => {
+    if (activeFilter === "All") return true;
+    if (activeFilter === "Live Products") return Boolean(project.liveUrl);
+    if (activeFilter === "Mobile App") return project.category.toLowerCase().includes("mobile");
+    if (activeFilter === "Admin Panel") return project.category.toLowerCase().includes("admin") || project.category.toLowerCase().includes("dashboard");
+    if (activeFilter === "Fintech") return project.category.toLowerCase().includes("fintech") || project.category.toLowerCase().includes("trading") || project.category.toLowerCase().includes("payment");
+    if (activeFilter === "Web & Branding") return project.category.toLowerCase().includes("branding") || project.category.toLowerCase().includes("web") || project.category.toLowerCase().includes("enterprise");
+    return true;
+  });
+
+  const displayedProjects = showAll
+    ? filteredProjects
+    : activeFilter === "All"
+    ? projects.slice(0, 5)
+    : filteredProjects;
+
+  return (
+    <section className={styles.section} id="work" aria-label="Selected Projects">
+      <div className="container">
+        <div className={styles.header}>
+          <div className={styles.titleArea}>
+            <p className="eyebrow">Selected Portfolio</p>
+            <h2 className={styles.title}>
+              {showAll ? "All Work & Case Studies" : "Recent Work"}
+            </h2>
+          </div>
+          {!showAll && (
+            <Button href="/projects" variant="outline">
+              View All Projects ({projects.length})
+            </Button>
+          )}
+        </div>
+
+        {/* Category Filter Bar */}
+        <div className={styles.filterBar} role="tablist" aria-label="Filter projects by category">
+          {filterCategories.map((category) => {
+            const count =
+              category === "All"
+                ? projects.length
+                : category === "Live Products"
+                ? projects.filter((p) => p.liveUrl).length
+                : projects.filter((p) => {
+                    if (category === "Mobile App") return p.category.toLowerCase().includes("mobile");
+                    if (category === "Admin Panel") return p.category.toLowerCase().includes("admin") || p.category.toLowerCase().includes("dashboard");
+                    if (category === "Fintech") return p.category.toLowerCase().includes("fintech") || p.category.toLowerCase().includes("trading") || p.category.toLowerCase().includes("payment");
+                    if (category === "Web & Branding") return p.category.toLowerCase().includes("branding") || p.category.toLowerCase().includes("web") || p.category.toLowerCase().includes("enterprise");
+                    return true;
+                  }).length;
+
+            const isActive = activeFilter === category;
+
+            return (
+              <button
+                key={category}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActiveFilter(category)}
+                className={`${styles.filterBtn} ${isActive ? styles.filterBtnActive : ""}`}
+              >
+                {category === "Live Products" && "🟢 "}
+                {category} ({count})
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Project Grid */}
+        <motion.div
+          key={activeFilter + (showAll ? "-all" : "-home")}
+          className={showAll || activeFilter !== "All" ? styles.uniformGrid : styles.bentoGrid}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {displayedProjects.map((project, index) => {
+            const spanClass =
+              showAll || activeFilter !== "All"
+                ? styles.uniformItem
+                : bentoSpanStyles[index % bentoSpanStyles.length] || "";
+
+            return (
+              <motion.div
+                key={project.slug}
+                className={spanClass}
+                variants={cardVariants}
+              >
+                <div className={styles.card}>
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className={styles.imageWrap}
+                    aria-label={`View case study: ${project.title}`}
+                  >
+                    <Image
+                      src={project.thumbnail}
+                      alt={`Preview thumbnail for ${project.title}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className={styles.image}
+                      priority={index < 2}
+                    />
+                  </Link>
+
+                  <div className={styles.overlay}>
+                    <div className={styles.cardInfo}>
+                      <div className={styles.textGroup}>
+                        <div className={styles.tagRow}>
+                          <span className={styles.categoryTag}>
+                            {project.category}
+                          </span>
+                          {project.liveUrl && (
+                            <span className={styles.liveBadge}>
+                              <span className={styles.greenDot} aria-hidden="true" />
+                              <span>Live</span>
+                            </span>
+                          )}
+                        </div>
+                        <Link
+                          href={`/projects/${project.slug}`}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <h3 className={styles.projectTitle}>
+                            {project.title}
+                          </h3>
+                        </Link>
+                      </div>
+
+                      <div className={styles.actionsRow}>
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={styles.liveDirectLink}
+                            aria-label={`Visit live site for ${project.title}`}
+                          >
+                            <span>Live</span>
+                            <ExternalLink size={12} aria-hidden="true" />
+                          </a>
+                        )}
+
+                        <Link
+                          href={`/projects/${project.slug}`}
+                          className={styles.arrowBtn}
+                          aria-label={`Open case study for ${project.title}`}
+                        >
+                          <ArrowUpRight size={20} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+
+          {/* Interactive CTA card for homepage */}
+          {!showAll && activeFilter === "All" && (
+            <motion.div className={styles.ctaCard} variants={cardVariants}>
+              <div className={styles.ctaTop}>
+                <span className={styles.ctaEyebrow}>Have a project in mind?</span>
+                <h3 className={styles.ctaHeading}>
+                  Let&apos;s build something extraordinary together.
+                </h3>
+              </div>
+              <div className={styles.ctaBottom}>
+                <span className={styles.ctaLinkText}>Get in touch</span>
+                <Link
+                  href="/contact"
+                  className={styles.arrowBtn}
+                  aria-label="Contact Geeta Bisht"
+                >
+                  <ArrowUpRight size={20} />
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </motion.div>
+      </div>
+    </section>
+  );
+}

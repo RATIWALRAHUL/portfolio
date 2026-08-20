@@ -1,0 +1,415 @@
+.aboutPage {
+  padding-bottom: 96px;
+  overflow: hidden;
+}
+
+/* SECTION 1 — Intro */
+.introSection {
+  padding-top: 72px;
+  padding-bottom: 96px;
+  position: relative;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.introLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6.5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.role {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.bio {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+.signatureWrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 12px 0 8px;
+}
+
+.signature {
+  font-family: "Brush Script MT", "Caveat", "Segoe Script", cursive, sans-serif;
+  font-size: 32px;
+  color: var(--accent-orange);
+  transform: rotate(-3deg);
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.squiggle {
+  color: var(--accent-orange);
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* Portrait Right */
+.portraitWrap {
+  position: relative;
+  aspect-ratio: 4 / 4.8;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.blob {
+  position: absolute;
+  top: 4%;
+  left: 6%;
+  right: 6%;
+  bottom: 8%;
+  background: var(--accent-orange);
+  border-radius: 46% 54% 50% 50% / 52% 48% 52% 48%;
+  transform: rotate(2deg);
+  z-index: 0;
+  opacity: 0.95;
+}
+
+.portrait {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 98%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 98%);
+}
+
+.portraitSvg {
+  width: 100%;
+  height: 100%;
+}
+
+/* SECTION 2 — Vision + Experience */
+.visionSection {
+  padding: 96px 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.visionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+.visionLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.visionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.2vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.visionParagraph {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.visionRight {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.statCard {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-orange);
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.5vw, 44px);
+  color: var(--accent-orange);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* SECTION 3 — Experience Timeline */
+.experienceSection {
+  padding: 96px 0;
+}
+
+.sectionHeader {
+  margin-bottom: 48px;
+  max-width: 640px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.2vw, 44px);
+  color: var(--text);
+  margin-top: 8px;
+  letter-spacing: -0.02em;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.experienceCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.experienceCard:hover {
+  border-color: var(--accent-orange);
+  transform: translateY(-2px);
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.expRole {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text);
+}
+
+.expCompany {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-orange-text);
+  margin-top: 2px;
+}
+
+.expPeriod {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+
+.expBullets {
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Education Section */
+.educationSection {
+  padding: 96px 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.educationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.educationCard {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eduDegree {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.eduSchool {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.eduYear {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-orange-text);
+  margin-top: 4px;
+}
+
+/* SECTION 4 — Skills Strip Categorized */
+.skillsSection {
+  padding: 96px 0;
+}
+
+.skillCategoryGroup {
+  margin-bottom: 36px;
+}
+
+.categoryHeading {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange-text);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tagsWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skillPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.skillPill:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-orange);
+}
+
+.dotOrange {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-orange);
+}
+
+.dotTeal {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-teal);
+}
+
+.dotLavender {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-lavender);
+}
+
+/* Responsive (<860px) */
+@media (max-width: 860px) {
+  .introGrid,
+  .visionGrid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .portraitWrap {
+    order: -1;
+    max-width: 320px;
+  }
+
+  .introSection,
+  .visionSection,
+  .experienceSection,
+  .educationSection,
+  .skillsSection {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .expHeader {
+    flex-direction: column;
+  }
+}

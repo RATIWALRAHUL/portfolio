@@ -1,0 +1,39 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#1C140E"/>
+  <circle cx="680" cy="140" r="240" fill="#EDA23F" fill-opacity="0.25"/>
+  <circle cx="120" cy="480" r="200" fill="#8B4513" fill-opacity="0.3"/>
+  <g transform="translate(120, 70)">
+    <!-- Main Device / Web Canvas Mockup -->
+    <rect width="560" height="460" rx="28" fill="#2A1E17" stroke="#EDA23F" stroke-opacity="0.4" stroke-width="2"/>
+    <!-- Top Nav of Damru site -->
+    <rect x="36" y="32" width="160" height="14" rx="7" fill="#EDA23F"/>
+    <rect x="36" y="60" width="320" height="26" rx="6" fill="#FFFFFF"/>
+    
+    <!-- Hero Banner Card inside Mockup -->
+    <rect x="36" y="110" width="488" height="180" rx="20" fill="#3D2B20"/>
+    <!-- Damru Logo Silhouette & Branding -->
+    <circle cx="100" cy="200" r="44" fill="#EDA23F" fill-opacity="0.2"/>
+    <path d="M85 180 L115 180 L85 220 L115 220 Z" fill="#EDA23F"/>
+    <circle cx="100" cy="200" r="4" fill="#FFFFFF"/>
+    <rect x="165" y="175" width="180" height="18" rx="6" fill="#FFFFFF"/>
+    <rect x="165" y="205" width="230" height="12" rx="4" fill="#EDA23F"/>
+    <rect x="165" y="225" width="140" height="10" rx="4" fill="#D2B48C"/>
+    <rect x="420" y="185" width="80" height="32" rx="16" fill="#EDA23F"/>
+
+    <!-- Bottom Showcase Grid: Menu, Reservation & Ambiance -->
+    <rect x="36" y="310" width="150" height="120" rx="16" fill="#3D2B20"/>
+    <rect x="52" y="328" width="80" height="10" rx="4" fill="#EDA23F"/>
+    <rect x="52" y="348" width="118" height="14" rx="4" fill="#FFFFFF"/>
+    <rect x="52" y="372" width="100" height="40" rx="8" fill="#1C140E"/>
+
+    <rect x="205" y="310" width="150" height="120" rx="16" fill="#3D2B20"/>
+    <rect x="221" y="328" width="80" height="10" rx="4" fill="#EDA23F"/>
+    <rect x="221" y="348" width="118" height="14" rx="4" fill="#FFFFFF"/>
+    <rect x="221" y="372" width="100" height="40" rx="8" fill="#1C140E"/>
+
+    <rect x="374" y="310" width="150" height="120" rx="16" fill="#3D2B20"/>
+    <rect x="390" y="328" width="80" height="10" rx="4" fill="#EDA23F"/>
+    <rect x="390" y="348" width="118" height="14" rx="4" fill="#FFFFFF"/>
+    <rect x="390" y="372" width="100" height="40" rx="8" fill="#1C140E"/>
+  </g>
+</svg>

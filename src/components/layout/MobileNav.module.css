@@ -1,0 +1,124 @@
+.mobileNavWrapper {
+  display: none;
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  position: relative;
+  z-index: 110;
+}
+
+.menuBtn:hover {
+  background: var(--surface-2);
+}
+
+.menuBtn:active {
+  transform: scale(0.95);
+}
+
+/* Fullscreen Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: var(--bg);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.overlayLogo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin: auto 0;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.navLink {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 8vw, 44px);
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.navLink:hover {
+  color: var(--accent-orange);
+  transform: translateX(4px);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 280px;
+  margin-top: 12px;
+}
+
+.toggleWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.bottomInfo {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 860px) {
+  .mobileNavWrapper {
+    display: block;
+  }
+}

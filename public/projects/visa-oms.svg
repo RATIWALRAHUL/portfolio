@@ -1,0 +1,33 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#0C4A6E"/>
+  <circle cx="700" cy="140" r="220" fill="#38BDF8" fill-opacity="0.3"/>
+  <circle cx="100" cy="460" r="200" fill="#EDA23F" fill-opacity="0.25"/>
+  <g transform="translate(130, 80)">
+    <rect width="540" height="440" rx="28" fill="#082F49" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="2"/>
+    <rect x="30" y="30" width="180" height="14" rx="7" fill="#38BDF8"/>
+    <rect x="30" y="55" width="280" height="24" rx="6" fill="#FFFFFF"/>
+    
+    <!-- Travel Agent Multitenant Pipeline -->
+    <rect x="30" y="100" width="480" height="90" rx="16" fill="#075985"/>
+    <circle cx="70" cy="145" r="22" fill="#38BDF8"/>
+    <rect x="105" y="130" width="130" height="14" rx="6" fill="#FFFFFF"/>
+    <rect x="105" y="150" width="80" height="10" rx="4" fill="#BAE6FD"/>
+    <rect x="370" y="130" width="115" height="30" rx="8" fill="#EDA23F"/>
+    
+    <!-- Visa Application Stages -->
+    <rect x="30" y="210" width="150" height="190" rx="16" fill="#0C4A6E"/>
+    <rect x="45" y="230" width="80" height="12" rx="4" fill="#38BDF8"/>
+    <rect x="45" y="255" width="120" height="45" rx="8" fill="#082F49"/>
+    <rect x="45" y="315" width="120" height="45" rx="8" fill="#082F49"/>
+
+    <rect x="195" y="210" width="150" height="190" rx="16" fill="#0C4A6E"/>
+    <rect x="210" y="230" width="80" height="12" rx="4" fill="#EDA23F"/>
+    <rect x="210" y="255" width="120" height="45" rx="8" fill="#082F49"/>
+    <rect x="210" y="315" width="120" height="45" rx="8" fill="#082F49"/>
+
+    <rect x="360" y="210" width="150" height="190" rx="16" fill="#0C4A6E"/>
+    <rect x="375" y="230" width="80" height="12" rx="4" fill="#22C55E"/>
+    <rect x="375" y="255" width="120" height="45" rx="8" fill="#082F49"/>
+    <rect x="375" y="315" width="120" height="45" rx="8" fill="#082F49"/>
+  </g>
+</svg>

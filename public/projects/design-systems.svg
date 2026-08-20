@@ -1,0 +1,16 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#14532D"/>
+  <circle cx="700" cy="80" r="180" fill="#22C55E" fill-opacity="0.3"/>
+  <g transform="translate(100, 50)">
+    <rect width="600" height="350" rx="20" fill="#052E16" stroke="#166534" stroke-width="2"/>
+    <rect x="40" y="30" width="160" height="12" rx="6" fill="#22C55E"/>
+    <rect x="40" y="55" width="320" height="20" rx="6" fill="#FFFFFF"/>
+    <!-- Component system grid -->
+    <rect x="40" y="95" width="115" height="75" rx="10" fill="#14532D"/>
+    <rect x="170" y="95" width="115" height="75" rx="10" fill="#14532D"/>
+    <rect x="300" y="95" width="115" height="75" rx="10" fill="#14532D"/>
+    <rect x="430" y="95" width="115" height="75" rx="10" fill="#14532D"/>
+    <rect x="40" y="190" width="245" height="85" rx="10" fill="#14532D"/>
+    <rect x="300" y="190" width="245" height="85" rx="10" fill="#14532D"/>
+  </g>
+</svg>

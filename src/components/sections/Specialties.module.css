@@ -1,0 +1,223 @@
+.specialties {
+  padding: 96px 0;
+  position: relative;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-top: 8px;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .bioCard:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.cardOrange:hover {
+  border-color: var(--accent-orange);
+}
+
+.cardTeal:hover {
+  border-color: var(--accent-teal);
+}
+
+.cardLavender:hover {
+  border-color: var(--accent-lavender);
+}
+
+.cardCoral:hover {
+  border-color: var(--accent-coral);
+}
+
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="dark"] .iconWrap {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.iconOrange {
+  color: var(--accent-orange);
+}
+
+.iconTeal {
+  color: var(--accent-teal);
+}
+
+.iconLavender {
+  color: var(--accent-lavender);
+}
+
+.iconCoral {
+  color: var(--accent-coral);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Bio Card */
+.bioCard {
+  grid-column: span 2;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  min-height: 180px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bioCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-orange);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--accent-orange);
+  border: 3px solid var(--surface);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.avatarSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.bioContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bioHeadline {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 24px);
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.bioSub {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.bioTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(46, 111, 107, 0.12);
+  color: var(--accent-teal);
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-teal);
+  box-shadow: 0 0 6px var(--accent-teal);
+}
+
+@media (max-width: 860px) {
+  .specialties {
+    padding: 64px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bioCard {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+  }
+}

@@ -1,0 +1,24 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#1B4D3E"/>
+  <circle cx="680" cy="120" r="220" fill="#EDA23F" fill-opacity="0.3"/>
+  <circle cx="120" cy="480" r="200" fill="#2E6F6B" fill-opacity="0.5"/>
+  <g transform="translate(140, 90)">
+    <rect width="520" height="420" rx="28" fill="#0E231C" fill-opacity="0.9" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="2"/>
+    <rect x="36" y="36" width="160" height="12" rx="6" fill="#EDA23F"/>
+    <rect x="36" y="60" width="240" height="24" rx="6" fill="#FFFFFF"/>
+    <!-- Loan KYC & CIBIL score gauge -->
+    <rect x="36" y="110" width="210" height="130" rx="16" fill="#1A3B30" stroke="#2E6F6B" stroke-opacity="0.6"/>
+    <circle cx="141" cy="170" r="42" stroke="#EDA23F" stroke-width="8" stroke-dasharray="210" stroke-dashoffset="45" stroke-linecap="round"/>
+    <rect x="75" y="215" width="132" height="12" rx="6" fill="#FFFFFF"/>
+    <!-- Financial Metrics cards -->
+    <rect x="270" y="110" width="214" height="130" rx="16" fill="#1A3B30" stroke="#2E6F6B" stroke-opacity="0.6"/>
+    <rect x="290" y="130" width="100" height="12" rx="6" fill="#EDA23F"/>
+    <rect x="290" y="152" width="150" height="20" rx="6" fill="#FFFFFF"/>
+    <rect x="290" y="185" width="174" height="36" rx="8" fill="#0E231C"/>
+    <!-- Data table row preview -->
+    <rect x="36" y="265" width="448" height="120" rx="16" fill="#132B23"/>
+    <rect x="56" y="285" width="408" height="16" rx="6" fill="#FFFFFF" fill-opacity="0.2"/>
+    <rect x="56" y="315" width="408" height="16" rx="6" fill="#FFFFFF" fill-opacity="0.1"/>
+    <rect x="56" y="345" width="408" height="16" rx="6" fill="#FFFFFF" fill-opacity="0.1"/>
+  </g>
+</svg>

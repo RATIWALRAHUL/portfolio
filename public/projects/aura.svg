@@ -1,0 +1,15 @@
+<svg width="800" height="900" viewBox="0 0 800 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="900" fill="#7B6FA6"/>
+  <circle cx="200" cy="200" r="280" fill="#D9503F" fill-opacity="0.3"/>
+  <circle cx="600" cy="700" r="240" fill="#EDA23F" fill-opacity="0.35"/>
+  <g transform="translate(150, 140)">
+    <rect width="500" height="620" rx="36" fill="#151515" fill-opacity="0.8" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="2"/>
+    <rect x="40" y="44" width="140" height="12" rx="6" fill="#7B6FA6"/>
+    <rect x="40" y="72" width="300" height="24" rx="6" fill="#FFFFFF"/>
+    <rect x="40" y="130" width="420" height="180" rx="20" fill="#FFFFFF" fill-opacity="0.05" stroke="#FFFFFF" stroke-opacity="0.1"/>
+    <path d="M 70 260 C 130 200, 190 280, 250 190 C 310 120, 370 210, 430 160" stroke="#EDA23F" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <rect x="40" y="340" width="200" height="110" rx="16" fill="#EDA23F" fill-opacity="0.2"/>
+    <rect x="260" y="340" width="200" height="110" rx="16" fill="#D9503F" fill-opacity="0.2"/>
+    <rect x="40" y="475" width="420" height="90" rx="16" fill="#FFFFFF" fill-opacity="0.08"/>
+  </g>
+</svg>
