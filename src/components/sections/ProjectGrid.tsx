@@ -149,108 +149,105 @@ export default function ProjectGrid({ showAll = false }: ProjectGridProps) {
           initial="hidden"
           animate="visible"
         >
-          {displayedProjects.map((project, index) => {
-            const isFeatured = index === 0 && !showAll && activeFilter === "All";
+          {displayedProjects.map((project, index) => (
+            <motion.div
+              key={project.slug}
+              className={styles.gridItem}
+              variants={cardVariants}
+            >
+              <article className={styles.card}>
+                {/* Top Image Preview Canvas */}
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className={styles.imageCanvas}
+                  aria-label={`View case study: ${project.title}`}
+                >
+                  <Image
+                    src={project.thumbnail}
+                    alt={`Screenshot of ${project.title}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className={styles.image}
+                    priority={index < 2}
+                  />
 
-            return (
-              <motion.div
-                key={project.slug}
-                className={`${styles.gridItem} ${isFeatured ? styles.featuredItem : ""}`}
-                variants={cardVariants}
-              >
-                <article className={styles.card}>
-                  {/* Top Preview Canvas */}
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className={styles.previewCanvas}
-                    aria-label={`View case study: ${project.title}`}
-                  >
-                    <div className={styles.imageContainer}>
-                      <Image
-                        src={project.thumbnail}
-                        alt={`Screenshot and preview of ${project.title}`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className={styles.previewImage}
-                        priority={index < 2}
-                      />
-                    </div>
-
-                    {/* Floating Badges */}
-                    <div className={styles.topBadgesRow}>
-                      <span className={styles.categoryBadge}>
-                        {project.category}
+                  {/* Top Badges */}
+                  <div className={styles.topBadges}>
+                    <span className={styles.categoryBadge}>
+                      {project.category.split("/")[0].trim()}
+                    </span>
+                    {project.liveUrl && (
+                      <span className={styles.livePulseBadge}>
+                        <span className={styles.pulseDot} aria-hidden="true" />
+                        <span>Live</span>
                       </span>
-                      {project.liveUrl && (
-                        <span className={styles.livePulseBadge}>
-                          <span className={styles.pulseDot} aria-hidden="true" />
-                          <span>Live System</span>
-                        </span>
-                      )}
-                    </div>
-                  </Link>
-
-                  {/* Bottom Structured Info Panel */}
-                  <div className={styles.infoPanel}>
-                    <div className={styles.infoLeft}>
-                      <Link href={`/projects/${project.slug}`} className={styles.titleLink}>
-                        <h3 className={styles.projectTitle}>{project.title}</h3>
-                      </Link>
-                      {project.subtitle && (
-                        <p className={styles.projectSubtitle}>{project.subtitle}</p>
-                      )}
-                    </div>
-
-                    <div className={styles.actionsRight}>
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className={styles.liveBtn}
-                          title={`Visit live site: ${project.title}`}
-                          aria-label={`Visit live site: ${project.title}`}
-                        >
-                          <span>Live</span>
-                          <ExternalLink size={13} aria-hidden="true" />
-                        </a>
-                      )}
-
-                      <Link
-                        href={`/projects/${project.slug}`}
-                        className={styles.caseStudyBtn}
-                        title={`Open case study: ${project.title}`}
-                        aria-label={`Open case study: ${project.title}`}
-                      >
-                        <ArrowUpRight size={18} />
-                      </Link>
-                    </div>
+                    )}
                   </div>
-                </article>
-              </motion.div>
-            );
-          })}
+                </Link>
 
-          {/* Interactive CTA Card */}
+                {/* Bottom Content Body */}
+                <div className={styles.cardBody}>
+                  <div className={styles.textStack}>
+                    <Link href={`/projects/${project.slug}`} className={styles.titleLink}>
+                      <h3 className={styles.projectTitle}>{project.title}</h3>
+                    </Link>
+                    {project.subtitle && (
+                      <p className={styles.projectSubtitle}>{project.subtitle}</p>
+                    )}
+                  </div>
+
+                  <div className={styles.cardFooter}>
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.liveBtn}
+                        title={`Visit live site: ${project.title}`}
+                        aria-label={`Visit live site: ${project.title}`}
+                      >
+                        <span>Visit Live</span>
+                        <ExternalLink size={13} aria-hidden="true" />
+                      </a>
+                    ) : (
+                      <span className={styles.figmaTag}>Figma UI/UX</span>
+                    )}
+
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className={styles.caseStudyBtn}
+                      title={`Open case study: ${project.title}`}
+                      aria-label={`Open case study: ${project.title}`}
+                    >
+                      <span>Case Study</span>
+                      <ArrowUpRight size={16} aria-hidden="true" />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            </motion.div>
+          ))}
+
+          {/* Interactive CTA Card for Home */}
           {!showAll && activeFilter === "All" && (
-            <motion.div className={styles.ctaGridItem} variants={cardVariants}>
+            <motion.div className={styles.gridItem} variants={cardVariants}>
               <div className={styles.ctaCard}>
                 <div className={styles.ctaTop}>
                   <div className={styles.ctaBadge}>
                     <Sparkles size={13} color="var(--accent-orange)" aria-hidden="true" />
-                    <span>Available for Projects</span>
+                    <span>Available for Hire</span>
                   </div>
                   <h3 className={styles.ctaHeading}>
-                    Have a project in mind? Let&apos;s build something extraordinary.
+                    Have a project in mind? Let&apos;s build something great.
                   </h3>
                   <p className={styles.ctaDesc}>
-                    Specialized in high-conversion web apps, multi-role admin panels, and mobile design systems.
+                    Specialized in fintech web portals, enterprise multi-dashboards, and mobile application design systems.
                   </p>
                 </div>
 
                 <div className={styles.ctaBottom}>
                   <Link href="/contact" className={styles.ctaButton}>
-                    <span>Start a Conversation</span>
+                    <span>Start a Project</span>
                     <ArrowUpRight size={16} aria-hidden="true" />
                   </Link>
                 </div>
