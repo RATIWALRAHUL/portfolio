@@ -75,7 +75,7 @@ export default function ContactPage() {
     try {
       const accessKey =
         process.env.NEXT_PUBLIC_WEB3FORMS_KEY ||
-        "YOUR_WEB3FORMS_ACCESS_KEY";
+        "e1d41dfa-7d69-4d77-b003-2a35be3ea773";
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
