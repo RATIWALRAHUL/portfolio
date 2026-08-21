@@ -270,9 +270,24 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Giant Bleeding Outlined Wordmark */}
+        {/* Giant Continuous Marquee Train */}
         <div className={styles.giantWordmarkWrap} aria-hidden="true">
-          <span className={styles.giantWordmark}>GEETA BISHT</span>
+          <div className={styles.giantMarqueeTrack}>
+            <span className={styles.giantWordmarkItem}>GEETA BISHT</span>
+            <span className={styles.giantWordmarkDot}>•</span>
+            <span className={styles.giantWordmarkItem}>GEETA BISHT</span>
+            <span className={styles.giantWordmarkDot}>•</span>
+            <span className={styles.giantWordmarkItem}>GEETA BISHT</span>
+            <span className={styles.giantWordmarkDot}>•</span>
+          </div>
+          <div className={styles.giantMarqueeTrack} aria-hidden="true">
+            <span className={styles.giantWordmarkItem}>GEETA BISHT</span>
+            <span className={styles.giantWordmarkDot}>•</span>
+            <span className={styles.giantWordmarkItem}>GEETA BISHT</span>
+            <span className={styles.giantWordmarkDot}>•</span>
+            <span className={styles.giantWordmarkItem}>GEETA BISHT</span>
+            <span className={styles.giantWordmarkDot}>•</span>
+          </div>
         </div>
       </section>
     </main>

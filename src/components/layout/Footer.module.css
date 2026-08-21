@@ -53,18 +53,58 @@
 
 .wordmarkWrap {
   width: 100%;
-  text-align: center;
-  padding: 16px 0 0;
+  overflow: hidden;
+  display: flex;
+  user-select: none;
+  pointer-events: none;
+  padding: 24px 0 12px;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.wordmark {
+.marqueeTrack {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: marqueeSlide 26s linear infinite;
+  will-change: transform;
+}
+
+.wordmarkItem {
   font-family: var(--font-display);
-  font-size: clamp(48px, 11.5vw, 160px);
-  line-height: 1;
+  font-size: clamp(64px, 14vw, 190px);
+  line-height: 0.95;
   letter-spacing: -0.02em;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(245, 240, 230, 0.3);
-  white-space: nowrap;
+  -webkit-text-stroke: 1.5px rgba(245, 240, 230, 0.28);
+  padding: 0 16px;
+  display: inline-block;
+}
+
+.wordmarkDot {
+  font-size: clamp(28px, 5vw, 64px);
+  color: var(--accent-orange);
+  opacity: 0.8;
+  padding: 0 12px;
+  line-height: 1;
+  display: inline-block;
+}
+
+@keyframes marqueeSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeTrack {
+    animation: none;
+  }
 }
 
 .bottom {

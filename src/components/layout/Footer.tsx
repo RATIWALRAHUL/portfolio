@@ -39,8 +39,28 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Smooth Continuous Marquee Train */}
       <div className={styles.wordmarkWrap} aria-hidden="true">
-        <span className={styles.wordmark}>GEETA BISHT</span>
+        <div className={styles.marqueeTrack}>
+          <span className={styles.wordmarkItem}>GEETA BISHT</span>
+          <span className={styles.wordmarkDot}>•</span>
+          <span className={styles.wordmarkItem}>GEETA BISHT</span>
+          <span className={styles.wordmarkDot}>•</span>
+          <span className={styles.wordmarkItem}>GEETA BISHT</span>
+          <span className={styles.wordmarkDot}>•</span>
+          <span className={styles.wordmarkItem}>GEETA BISHT</span>
+          <span className={styles.wordmarkDot}>•</span>
+        </div>
+        <div className={styles.marqueeTrack} aria-hidden="true">
+          <span className={styles.wordmarkItem}>GEETA BISHT</span>
+          <span className={styles.wordmarkDot}>•</span>
+          <span className={styles.wordmarkItem}>GEETA BISHT</span>
+          <span className={styles.wordmarkDot}>•</span>
+          <span className={styles.wordmarkItem}>GEETA BISHT</span>
+          <span className={styles.wordmarkDot}>•</span>
+          <span className={styles.wordmarkItem}>GEETA BISHT</span>
+          <span className={styles.wordmarkDot}>•</span>
+        </div>
       </div>
 
       <div className={`container ${styles.bottom}`}>
