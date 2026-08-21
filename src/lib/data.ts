@@ -302,12 +302,10 @@ export const projects: Project[] = [
       { value: "3 Steps", label: "Table Reservation Flow" },
     ],
     galleryImages: [
-      { url: "/projects/damru/live-hero.jpg", caption: "Damru By Namo live website hero showcasing luxury culinary experience (https://damrubynamo.com)." },
-      { url: "/projects/damru/dining-ambiance.jpg", caption: "Interactive dining ambiance tour and gourmet chef specials menu." },
+      { url: "/projects/damru/live-hero.jpg", caption: "Actual desktop browser screenshot of Damru By Namo live website (https://damrubynamo.com)." },
+      { url: "/projects/damru/dining-ambiance.jpg", caption: "Damru By Namo live dining ambiance tour and interactive chef specials menu." },
       { url: "/projects/damru/full-website.jpg", caption: "Full interactive production website for luxury banquet and restaurant." },
-      { url: "/projects/damru.jpg", caption: "Damru By Namo storefront and interactive menu explorer on laptop." },
-      { url: "/projects/damru.svg", caption: "Damru By Namo vector branding mark and culinary menu architecture." },
-      { url: "/projects/business-sites.jpg", caption: "Multi-device responsive mockup showcase across desktop, tablet, and mobile." },
+      { url: "/projects/damru/full-website-hero.jpg", caption: "Damru By Namo live banquet hall inquiry and table reservation portal." },
     ],
     featured: true,
   },
@@ -469,7 +467,7 @@ export const blogPosts: BlogPost[] = [
     date: "Feb 2026",
     readTime: "4 min read",
     category: "Content Design",
-    coverImage: "/projects/services.jpg",
+    coverImage: "/projects/gatecode-oms/live-dashboard.jpg",
     content: [
       "Legal and corporate compliance topics can be dense and intimidating. When designing the editorial UI for Vakilkaro, the primary objective was optimizing scannability and reading comprehension.",
       "We implemented a sticky table of contents, high-contrast serif/sans-serif typography pairing, key-takeaway callout cards, and dynamic related-article recommendations.",
@@ -483,7 +481,7 @@ export const blogPosts: BlogPost[] = [
     date: "Jan 2026",
     readTime: "5 min read",
     category: "Branding",
-    coverImage: "/projects/damru.jpg",
+    coverImage: "/projects/damru/live-hero.jpg",
     content: [
       "A strong brand identity is more than just a logo mark; it is a unified visual language that communicates credibility across digital apps, marketing websites, and corporate collateral.",
       "In our design process across multiple client brand identity projects (including Cocofina Sugar, Gatexpay, and Damru), we developed structured vector marks with strict clearspace rules, complementary color palettes, and production-ready SVG assets.",
@@ -497,7 +495,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 2025",
     readTime: "6 min read",
     category: "Design Systems",
-    coverImage: "/projects/gatecode-oms/live-website-screenshot.jpg",
+    coverImage: "/projects/gatecode/corporate-home.jpg",
     content: [
       "Enterprise admin panels present unique UX challenges: massive data tables, granular permissions, multi-tiered filters, and multi-tenant operations.",
       "Drawing from our work on the 4-in-1 Office Management Suite and Visa OMS, we break down methods for establishing flexible Figma component libraries, auto-layout tokens, and accessible color-contrast systems.",
