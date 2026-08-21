@@ -237,7 +237,7 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            {/* Right: Portrait with Blob backdrop */}
+            {/* Right: Portrait with Organic Shape backdrop */}
             <motion.div
               className={styles.portraitWrap}
               initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.94 }}
@@ -246,16 +246,25 @@ export default function AboutPage() {
               transition={{ duration: shouldReduceMotion ? 0.1 : 0.6, ease: "easeOut", delay: shouldReduceMotion ? 0 : 0.1 }}
               aria-hidden="true"
             >
-              <div className={styles.blob} aria-hidden="true" />
+              <div className={styles.blob} aria-hidden="true">
+                <span className={styles.watermarkText} aria-hidden="true">
+                  Geeta Bisht
+                </span>
+              </div>
               <div className={styles.portrait}>
                 <Image
                   src="/geeta-bisht.png"
                   alt="Geeta Bisht — UI/UX Designer"
                   fill
                   priority
-                  sizes="(max-width: 860px) 320px, 420px"
-                  style={{ objectFit: "contain", objectPosition: "bottom center" }}
+                  sizes="(max-width: 860px) 340px, 440px"
+                  className={styles.portraitImage}
                 />
+                <div className={styles.bottomGroundFade} aria-hidden="true" />
+              </div>
+              <div className={styles.groundBadge}>
+                <span className={styles.groundPulseDot} aria-hidden="true" />
+                <span className={styles.groundText}>UI/UX Designer • Jaipur, India</span>
               </div>
             </motion.div>
           </div>
