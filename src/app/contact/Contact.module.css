@@ -272,7 +272,7 @@
   align-items: center;
   flex-shrink: 0;
   white-space: nowrap;
-  animation: giantMarqueeSlide 45s linear infinite;
+  animation: giantMarqueeSlide 76s linear infinite;
   will-change: transform;
 }
 

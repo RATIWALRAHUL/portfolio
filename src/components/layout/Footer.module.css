@@ -68,7 +68,7 @@
   align-items: center;
   flex-shrink: 0;
   white-space: nowrap;
-  animation: marqueeSlide 52s linear infinite;
+  animation: marqueeSlide 76s linear infinite;
   will-change: transform;
 }
 
