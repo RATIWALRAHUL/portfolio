@@ -28,7 +28,9 @@ export default function ContactPage() {
     message: "",
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -44,8 +46,9 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setServerError(null);
     const newErrors: { [key: string]: string } = {};
 
     if (!formData.name.trim()) {
@@ -67,12 +70,53 @@ export default function ContactPage() {
       return;
     }
 
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const accessKey =
+        process.env.NEXT_PUBLIC_WEB3FORMS_KEY ||
+        "YOUR_WEB3FORMS_ACCESS_KEY";
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          from_name: `${formData.name} (Portfolio Inquiry)`,
+          subject: `✨ New Portfolio Lead: ${formData.name}`,
+          replyto: formData.email,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+      } else {
+        setServerError(
+          data.message ||
+            "Unable to send message right now. Please try reaching out directly via email."
+        );
+      }
+    } catch {
+      setServerError(
+        "Network connection error. Please email geetamanish9591@gmail.com directly."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
     setFormData({ name: "", email: "", message: "" });
     setErrors({});
+    setServerError(null);
     setIsSubmitted(false);
   };
 
@@ -117,6 +161,11 @@ export default function ContactPage() {
           </div>
         ) : (
           <form className={styles.form} onSubmit={handleSubmit} noValidate>
+            {serverError && (
+              <div className={styles.errorText} role="alert" style={{ marginBottom: 16 }}>
+                ⚠️ {serverError}
+              </div>
+            )}
             <div className={styles.inputGroup}>
               <label htmlFor="contact-name" className={styles.inputLabel}>
                 Your Name <span aria-hidden="true">*</span>
@@ -185,8 +234,14 @@ export default function ContactPage() {
               )}
             </div>
 
-            <button type="submit" className={styles.submitBtn}>
-              Send Message <ArrowUpRight size={18} aria-hidden="true" />
+            <button
+              type="submit"
+              className={styles.submitBtn}
+              disabled={isSubmitting}
+              style={isSubmitting ? { opacity: 0.7, cursor: "not-allowed" } : undefined}
+            >
+              {isSubmitting ? "Sending Note..." : "Send Message"}{" "}
+              <ArrowUpRight size={18} aria-hidden="true" />
             </button>
           </form>
         )}
