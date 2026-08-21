@@ -59,11 +59,12 @@
 
 .wordmark {
   font-family: var(--font-display);
-  font-size: clamp(80px, 18vw, 220px);
+  font-size: clamp(48px, 11.5vw, 160px);
   line-height: 1;
   letter-spacing: -0.02em;
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(245, 240, 230, 0.3);
+  white-space: nowrap;
 }
 
 .bottom {

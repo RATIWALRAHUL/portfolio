@@ -162,9 +162,9 @@ export default function MobileNav() {
                 href="/"
                 className={styles.overlayLogo}
                 onClick={closeMenu}
-                aria-label="Geeta — Return to homepage"
+                aria-label="Geeta Bisht — Return to homepage"
               >
-                GEETA
+                GEETA BISHT
               </Link>
               <button
                 type="button"

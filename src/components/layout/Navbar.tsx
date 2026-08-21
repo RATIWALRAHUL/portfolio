@@ -15,8 +15,8 @@ export default function Navbar() {
   return (
     <header className={styles.navbar}>
       <div className={`container ${styles.inner}`}>
-        <Link href="/" className={styles.logo} aria-label="Geeta — Return to homepage">
-          GEETA
+        <Link href="/" className={styles.logo} aria-label="Geeta Bisht — Return to homepage">
+          GEETA BISHT
         </Link>
 
         <nav className={styles.links} aria-label="Primary">

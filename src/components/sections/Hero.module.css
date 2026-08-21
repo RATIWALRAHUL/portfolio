@@ -247,7 +247,7 @@
   position: absolute;
   bottom: -6px;
   left: 0;
-  right: 0;
+  right: 104px;
   display: flex;
   justify-content: center;
   z-index: 6;
@@ -261,11 +261,12 @@
   background: var(--surface);
   border: 1px solid var(--border);
   backdrop-filter: blur(12px);
-  padding: 8px 18px;
+  padding: 8px 16px;
   border-radius: var(--radius-full);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
   pointer-events: auto;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
 }
 
 .groundBadge:hover {
@@ -318,9 +319,9 @@
 .contactStamp {
   position: absolute;
   bottom: -10px;
-  right: 12px;
-  width: 96px;
-  height: 96px;
+  right: -6px;
+  width: 94px;
+  height: 94px;
   border-radius: 50%;
   background: #151515;
   color: #FFFFFF;
@@ -388,8 +389,33 @@
 
   .portraitWrap {
     order: -1;
-    max-width: 360px;
+    max-width: 380px;
     margin: 0 auto;
+  }
+
+  .groundBaseDock {
+    right: 88px;
+    bottom: -8px;
+  }
+
+  .groundBadge {
+    padding: 6px 13px;
+  }
+
+  .groundText {
+    font-size: 12px;
+  }
+
+  .contactStamp {
+    width: 82px;
+    height: 82px;
+    bottom: -10px;
+    right: -4px;
+  }
+
+  .stampCenter {
+    width: 36px;
+    height: 36px;
   }
 
   .actions {
@@ -429,18 +455,68 @@
 
   .portraitWrap {
     width: 100%;
-    max-width: 300px;
+    max-width: 330px;
   }
 
-  .portraitCircle {
-    width: 240px;
-    height: 240px;
+  .groundBaseDock {
+    right: 80px;
+    bottom: -6px;
+  }
+
+  .groundBadge {
+    padding: 5px 11px;
+    gap: 6px;
+  }
+
+  .groundPulseDot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .groundText {
+    font-size: 11px;
   }
 
   .contactStamp {
-    width: 80px;
-    height: 80px;
-    bottom: -10px;
-    right: -5px;
+    width: 74px;
+    height: 74px;
+    bottom: -8px;
+    right: -4px;
+  }
+
+  .stampCenter {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 375px) {
+  .portraitWrap {
+    max-width: 290px;
+  }
+
+  .groundBaseDock {
+    right: 70px;
+  }
+
+  .groundBadge {
+    padding: 4px 8px;
+    gap: 5px;
+  }
+
+  .groundText {
+    font-size: 10px;
+  }
+
+  .contactStamp {
+    width: 64px;
+    height: 64px;
+    bottom: -6px;
+    right: -4px;
+  }
+
+  .stampCenter {
+    width: 28px;
+    height: 28px;
   }
 }

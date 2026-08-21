@@ -40,7 +40,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.wordmarkWrap} aria-hidden="true">
-        <span className={styles.wordmark}>GEETA</span>
+        <span className={styles.wordmark}>GEETA BISHT</span>
       </div>
 
       <div className={`container ${styles.bottom}`}>

@@ -272,7 +272,7 @@ export default function ContactPage() {
 
         {/* Giant Bleeding Outlined Wordmark */}
         <div className={styles.giantWordmarkWrap} aria-hidden="true">
-          <span className={styles.giantWordmark}>GEETA</span>
+          <span className={styles.giantWordmark}>GEETA BISHT</span>
         </div>
       </section>
     </main>
